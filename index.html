@@ -113,6 +113,11 @@
       gap: .4rem;
     }
 
+    .contact-list a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     .badge-row {
       display: flex;
       flex-wrap: wrap;
@@ -223,6 +228,13 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    .cert-item {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
   </style>
 </head>
 
@@ -247,114 +259,8 @@
           <ul class="contact-list">
             <li>📧 ph710838@gmail.com</li>
             <li>📱 (11) 93365-7505</li>
-            <li>🔗 linkedin.com/in/seu-link</li>
-            <li>💻 github.com/seu-github</li>
-          </ul>
-        </div>
+            <li>🔗 <a href="https://ph1102-bz.github.io/Portifolio-Dev-Pedro/" target="_blank">Meu Portfólio Online</a></li>
+            <li>💻 <a href="https://github.com/ph1102-bz/Portifolio-Dev-Pedro" target="_blank">GitHub - Portfólio<_
 
-        <div class="sub-block">
-          <a href="https://drive.google.com" target="_blank" class="btn">📄 Baixar Currículo</a>
-        </div>
-
-        <div class="sub-block">
-          <div class="section-title">Sobre Mim</div>
-          <p class="about">
-            Sou um profissional dedicado, curioso e movido por desafios. Tenho paixão por resolver problemas reais
-            através da tecnologia e por aprender continuamente. Busco crescer como desenvolvedor back-end Java,
-            contribuindo com qualidade, performance e boas práticas.
-          </p>
-        </div>
-
-        <div class="sub-block">
-          <div class="section-title">Formação</div>
-          <div class="edu-item">
-            <div class="edu-title">Gestão da Tecnologia da Informação</div>
-            <div class="edu-inst">Anhanguera • 2024–2027 (previsão de conclusão)</div>
-          </div>
-        </div>
-
-        <div class="card edu-card fade-in" style="margin-top:1.5rem;">
-          <div class="section-title">Certificações</div>
-          <div class="edu-item">
-            <div class="edu-title">Java Developer — DevDojo</div>
-            <div class="edu-inst">Maratona Java • Fundamentos, POO, Collections e boas práticas</div>
-          </div>
-
-          <div class="edu-item">
-            <div class="edu-title">Banco de Dados — MySQL</div>
-            <div class="edu-inst">Modelagem relacional, comandos SQL e integração com aplicações Java</div>
-          </div>
-
-          <div class="edu-item">
-            <div class="edu-title">Inglês Avançado</div>
-            <div class="edu-inst">Foco em comunicação técnica e leitura de documentação de TI</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LADO DIREITO -->
-    <section class="right">
-      <div class="card projects-card fade-in">
-        <div class="section-title">Projetos</div>
-
-        <div id="projects">
-          <div class="project-item">
-            <div class="project-header">
-              <div class="project-name">portfolio-api</div>
-              <div class="project-duration">2025 • em evolução</div>
-            </div>
-            <div class="project-desc">
-              API REST em Spring Boot que expõe minhas informações profissionais, habilidades e projetos.
-              Pensada para integração com este portfólio.
-            </div>
-            <div class="tech-row">
-              <span class="tech-chip">Java</span>
-              <span class="tech-chip">Spring Boot</span>
-              <span class="tech-chip">Maven</span>
-            </div>
-          </div>
-
-          <div class="project-item">
-            <div class="project-header">
-              <div class="project-name">logistica-api</div>
-              <div class="project-duration">2025</div>
-            </div>
-            <div class="project-desc">
-              API para simular rastreio e status de entregas, inspirada em processos reais de logística e carga.
-            </div>
-            <div class="tech-row">
-              <span class="tech-chip">Spring Boot</span>
-              <span class="tech-chip">JPA</span>
-              <span class="tech-chip">Swagger</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <footer>Feito com ☕ e Java por Pedro Henrique • Última atualização: 2025</footer>
-    </section>
-  </main>
-
-  <script>
-    // Modo claro/escuro
-    const toggle = document.getElementById("toggle-theme");
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("light");
-    });
-
-    // Animação de fade-in
-    const fadeElems = document.querySelectorAll(".fade-in");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    });
-    fadeElems.forEach(el => observer.observe(el));
-
-    // (Estrutura pronta pra integração com API)
-    // fetch("https://sua-api.com/projetos").then(r => r.json()).then(data => { ... });
-  </script>
-</body>
 </html>
 
