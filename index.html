@@ -118,20 +118,6 @@
       text-decoration: none;
     }
 
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem;
-    }
-
-    .badge {
-      background: rgba(148,163,184,0.08);
-      border: 1px solid var(--border);
-      padding: .4rem .6rem;
-      border-radius: var(--radius-sm);
-      font-size: .75rem;
-    }
-
     .project-item {
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
@@ -207,34 +193,14 @@
       opacity: 0.9;
     }
 
-    .toggle-theme {
-      background: none;
-      border: 1px solid var(--border);
-      color: var(--text);
-      border-radius: 8px;
-      padding: .3rem .7rem;
-      cursor: pointer;
-      font-size: .8rem;
-      float: right;
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 1rem;
+      display: none;
     }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .cert-item {
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--border);
-    }
-
   </style>
 </head>
 
@@ -264,8 +230,10 @@
           </ul>
         </div>
 
+        <!-- botão do currículo -->
         <div class="sub-block">
-          <a href="https://drive.google.com" target="_blank" class="btn">📄 Baixar Currículo</a>
+          <a href="#" class="btn" id="btn-curriculo">📄 Ver Currículo</a>
+          <iframe id="curriculo" src="Dev (1).pdf"></iframe>
         </div>
 
         <div class="sub-block">
@@ -301,8 +269,8 @@
     <section class="right">
       <div class="card projects-card fade-in">
         <div class="section-title">Projetos</div>
-
         <div id="projects">
+          <!-- seus projetos -->
           <div class="project-item">
             <div class="project-header">
               <div class="project-name">portfolio-api</div>
@@ -343,7 +311,7 @@
             </div>
             <div class="project-desc">
               CRUD de cadastro e listagem de animes desenvolvido durante os estudos de Java.
-              Foco em Programação Orientada a Objetos, organização de código e boas práticas.
+              Foco em POO, organização de código e boas práticas.
             </div>
             <div class="tech-row">
               <span class="tech-chip">Java</span>
@@ -371,7 +339,16 @@
       document.body.classList.toggle("light");
     });
 
-    // Animação de fade-in
+    // Mostrar/ocultar currículo
+    const btn = document.getElementById("btn-curriculo");
+    const curriculo = document.getElementById("curriculo");
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      curriculo.style.display = curriculo.style.display === "none" ? "block" : "none";
+      btn.textContent = curriculo.style.display === "block" ? "📄 Fechar Currículo" : "📄 Ver Currículo";
+    });
+
+    // Animação fade-in
     const fadeElems = document.querySelectorAll(".fade-in");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -382,4 +359,3 @@
   </script>
 </body>
 </html>
-
